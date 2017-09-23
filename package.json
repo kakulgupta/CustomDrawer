@@ -1,0 +1,29 @@
+{
+	"name": "CustomDrawer",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"babel-eslint": "^8.0.0",
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.48.3",
+		"react-navigation": "^1.0.0-beta.11"
+	},
+	"devDependencies": {
+		"babel-jest": "21.0.2",
+		"babel-preset-react-native": "4.0.0",
+		"eslint": "^4.4.1",
+		"eslint-plugin-import": "^2.7.0",
+		"eslint-plugin-react": "^7.3.0",
+		"eslint-plugin-react-native": "^3.0.1",
+		"eslint-plugin-sort-imports-es6-autofix": "^0.1.1",
+		"jest": "21.1.0",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}

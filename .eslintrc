@@ -1,0 +1,98 @@
+# "off" or 0 - turn the rule off
+# "warn" or 1 - turn the rule on as a warning(doesn’ t affect exit code)
+# "error" or 2 - turn the rule on as an error(exit code is 1 when triggered)
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "plugins": [
+    "react",
+    "react-native",
+    "sort-imports-es6-autofix",
+    "eslint-plugin-import"
+  ],
+  "settings": {
+    "import/ignore": [".util","node_modules"], # ignore this check for utils since they may contain module.exports and this rule doesn't work for modules containing module.exports. Reference: https://github.com/benmosher/eslint-plugin-import/blob/master/README.md#importignore
+    "import/core-modules": ["resolveAssetSource"] # add modules which cannot be resolved automatically, eg react-native modules
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "react-native/split-platform-components": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/jsx-uses-vars": 2,
+    "no-unused-vars": [2, {
+      "varsIgnorePattern": "React"
+    }],
+    "comma-spacing": [2, {
+     "before": false,
+     "after": true }],
+     "sort-imports-es6-autofix/sort-imports-es6": [2, {
+      "ignoreCase": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["single", "multiple", "all", "none"]
+    }],
+    "import/no-unresolved": [2, {commonjs: true, ignore: ["node_modules"]}],
+    "import/named": [2, {commonjs: false}],
+    "import/newline-after-import": 2,
+    "no-undef": 2,
+    "semi": 2,
+    "react/prop-types": 2,
+    "react/jsx-no-bind": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "space-before-blocks": 2,
+    "space-before-function-paren": 2,
+    "space-in-parens": 2,
+    "space-infix-ops": 2,
+    "space-unary-ops": 2,
+    "spaced-comment": 2,
+    "rest-spread-spacing": 2,
+    "semi-spacing": 2,
+    "no-unneeded-ternary": 2,
+    "eqeqeq": 2,
+    "dot-location": [2, "property"],
+    "no-extra-bind": 2,
+    "keyword-spacing": 2,
+    "key-spacing": 2,
+    "indent": [2, 2],
+    "react/jsx-indent": [2, 2],
+    "func-call-spacing": 2,
+    "array-bracket-spacing": 2,
+    "block-spacing": 2,
+    "brace-style": 2,
+    "arrow-body-style": 2,
+    "arrow-parens": 2,
+    "arrow-spacing": 2,
+    "react/self-closing-comp": 2,
+    "jsx-quotes": [2, "prefer-single"],
+    "object-curly-spacing": 2,
+    "quotes": [2, "single"],
+    "no-console": 2,
+    "comma-dangle": 2,
+    "prefer-const": 2,
+    "no-duplicate-imports": 2,
+    "no-whitespace-before-property": 2,
+    "no-useless-rename": 2,
+    "no-unreachable": 2,
+    "camelcase": 2,
+    "no-multiple-empty-lines": ["error", { "max": 1 }]
+  },
+  "globals": {
+    "GLOBAL": false,
+    "global": false,
+    "it": false,
+    "xit": false,
+    "expect": false,
+    "describe": false,
+    "jest": false,
+    "require": false,
+    "module": false,
+    "Promise": false,
+    "beforeAll": false,
+    "beforeEach": false,
+    "afterAll": false,
+    "afterEach": false
+  }
+}
