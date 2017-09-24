@@ -16,5 +16,5 @@ export default DrawerNavigator({
   }
 }, {
   contentComponent: SideMenu,
-  drawerWidth: 200
+  drawerWidth: 300
 });
