@@ -4,7 +4,7 @@ import Page3 from './Page3/Page3';
 import SideMenu from './SideMenu/SideMenu';
 import {DrawerNavigator} from 'react-navigation';
 
-export default DrawerNavigator({
+export const Router = DrawerNavigator({
   Page1: {
     screen: Page1
   },
